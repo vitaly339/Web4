@@ -1,0 +1,50 @@
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:#0a0f1f;color:#e7ecff;overflow-x:hidden}
+a{color:#8af5ff;text-decoration:none}
+.header{position:sticky;top:0;z-index:10; backdrop-filter: blur(8px); background: rgba(10,15,31,.6); border-bottom:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; align-items:center; padding:14px 18px}
+.brand{display:flex; gap:12px; align-items:center}
+.logo{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:10px; background: radial-gradient(120px 40px at 50% 10%, #5ef, transparent 60%); box-shadow: 0 0 22px #5ef8 inset, 0 0 40px #5ef5}
+h1{font-size:18px; margin:0 0 2px 0}
+.container{display:grid; grid-template-columns: 320px 1fr; gap:20px; max-width:1200px; margin:28px auto; padding: 0 18px}
+.toc{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px; max-height: calc(100vh - 160px); overflow:auto}
+.toc h3{margin:10px 10px; font-size:14px; color:#9fb2e3}
+.toc button{width:100%; text-align:left; background:transparent; border:0; color:#e7ecff; padding:10px 12px; border-radius:10px; cursor:pointer}
+.toc button:hover{background:rgba(255,255,255,.08)}
+.toc button.active{background:linear-gradient(90deg, rgba(106,224,255,.2), rgba(138,245,255,.08)); outline:1px solid rgba(106,224,255,.35)}
+.lesson{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; min-height:420px}
+.badges{display:flex; gap:10px; align-items:center; color:#9fb2e3; font-size:13px}
+.card{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.06); padding:14px; border-radius:12px; margin:12px 0}
+pre{background:#0b132a; padding:14px; border-radius:10px; overflow:auto}
+code{font-family: ui-monospace, Menlo, Consolas, monospace; font-size:13px}
+.btn{background:linear-gradient(90deg, #5ef, #8ff); border:0; color:#001216; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700}
+.btn.ghost{background:transparent; color:#8af5ff; border:1px solid rgba(106,224,255,.4)}
+.footer{position:sticky; bottom:0; z-index:10; display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 18px; border-top:1px solid rgba(255,255,255,.08); background: rgba(10,15,31,.7); backdrop-filter: blur(8px)}
+.cta{display:flex; gap:10px; align-items:center}
+.btn.like{display:flex; gap:6px; align-items:center}
+.progress-wrap{min-width:260px}
+.progress{height:8px; background:rgba(255,255,255,.08); border-radius:999px; overflow:hidden; margin-top:6px}
+#progressBar{height:100%; background:linear-gradient(90deg,#45f,#5ef); width:0%}
+#matrix{position:fixed; inset:0; z-index:-2}
+.glow{position:fixed; inset:-30%; background: radial-gradient(600px 300px at 20% 10%, rgba(106,224,255,.15), transparent 60%), radial-gradient(600px 300px at 80% 90%, rgba(138,245,255,.12), transparent 60%); z-index:-3}
+.quiz .q{padding:12px; border-radius:10px; background:rgba(0,0,0,.25); margin:10px 0; border:1px solid rgba(255,255,255,.06)}
+.quiz label{display:block; padding:6px 8px; border-radius:8px; cursor:pointer}
+.quiz label:hover{background:rgba(255,255,255,.06)}
+.cert{position:fixed; inset:0; z-index:25; background:#0b1020}
+.cert.hidden{display:none}
+.cert-inner{display:grid; place-items:center; height:100%}
+.cert-frame{position:relative; width:min(1000px,92vw); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.1); border-radius:18px; padding:30px 26px}
+.cert-glow{position:absolute; inset:-20%; background: radial-gradient(700px 300px at 50% -10%, rgba(106,224,255,.25), transparent 60%); filter: blur(20px); z-index:-1}
+.cert-head{font-size:34px; letter-spacing:6px; text-align:center; color:#6ae0ff; font-weight:800}
+.cert-sub{text-align:center; color:#9fb2e3; margin-top:6px}
+.cert-title{text-align:center; font-size:22px; margin:12px 0 18px 0}
+.cert-name-wrap{display:flex; gap:10px; align-items:center; justify-content:center; margin:12px 0}
+.cert-name-wrap input{background:transparent; border:0; border-bottom:1px dashed rgba(255,255,255,.5); color:#e7ecff; padding:6px 10px; min-width:320px; text-align:center; font-size:18px}
+.cert-meta{display:flex; gap:18px; justify-content:center; color:#9fb2e3; margin:10px 0 20px 0; flex-wrap:wrap}
+.sign-line{height:1px; width:260px; background:rgba(255,255,255,.4); margin-bottom:6px}
+@media print{
+  #matrix, .glow, .header, .container, .footer, .modal, .toc, .lesson{display:none !important}
+  .cert{position:static; background:#fff}
+  .cert-frame{box-shadow:none; border:2px solid #111; background:#fff; color:#111}
+  .cert-glow{display:none}
+}

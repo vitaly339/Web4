@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Веб‑разработка с нуля — 16 уроков (FINAL)</title>
+  <meta name="color-scheme" content="dark light" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  <div class="glow"></div>
+  <header class="header">
+    <div class="brand">
+      <span class="logo">⌁</span>
+      <div>
+        <h1>Веб‑разработка с нуля</h1>
+        <p>8 недель • 16 уроков • Порог 70%</p>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div id="progressText">Прогресс: 0%</div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav id="toc" class="toc"></nav>
+    <section id="lesson" class="lesson"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="extras"><button id="arcadeBtn" class="btn ghost">🎮 Квиз‑игры</button></div>
+    <div class="cta">
+      <button id="showCertBtn" class="btn ghost hidden">🎓 Сертификат</button>
+      <a href="https://t.me/your_bot" target="_blank" class="btn">Открыть в Telegram‑боте</a>
+      <button id="likeBtn" class="btn like" title="Нравится урок">❤ <span id="likeCount">0</span></button>
+    </div>
+    <button id="prevBtn" class="btn ghost">← Предыдущий</button>
+    <button id="nextBtn" class="btn">Следующий →</button>
+  </footer>
+
+  <!-- Arcade Modal -->
+  <div id="arcadeModal" class="modal hidden">
+    <div class="modal-inner">
+      <button class="modal-close" id="arcadeClose">✕</button>
+      <h2>🎮 Квиз‑игры</h2>
+      <div class="arcade-wrap">
+        <div class="arcade-card">
+          <h3>⚡ Speed Round (60 сек)</h3>
+          <button class="btn" id="startSpeed">Старт</button>
+          <div id="speedGame" class="game"></div>
+        </div>
+        <div class="arcade-card">
+          <h3>✅ True / ❌ False</h3>
+          <button class="btn ghost" id="startTF">Старт</button>
+          <div id="tfGame" class="game"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate View -->
+  <div id="certificateView" class="hidden cert">
+    <div class="cert-inner">
+      <div class="cert-frame">
+        <div class="cert-glow"></div>
+        <div class="cert-head">СЕРТИФИКАТ</div>
+        <div class="cert-sub">об успешном завершении курса</div>
+        <div class="cert-title">«Веб‑разработка с нуля — 16 уроков»</div>
+        <div class="cert-name-wrap">
+          <label>Имя выпускника:</label>
+          <input id="certName" placeholder="Введите имя">
+        </div>
+        <div class="cert-meta">
+          <div>Дата: <span id="certDate"></span></div>
+          <div>Оценка финального теста: <span id="certScore"></span></div>
+          <div>ID сертификата: <span id="certId"></span></div>
+        </div>
+        <div class="cert-sign">
+          <div class="sign-line"></div>
+          <div class="sign-name">Виталий Матвиенко</div>
+          <div class="sign-role">Автор курса</div>
+        </div>
+        <div class="cert-actions">
+          <button class="btn" id="savePDF">Сохранить в PDF</button>
+          <button class="btn ghost" id="backToCourse">Назад к курсу</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
